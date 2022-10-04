@@ -1,6 +1,5 @@
-import pizzReducer from "./reducers/pizzaReducer";
 import { combineReducers } from "redux";
-
+import pizzaReducer from "./reducers/pizzaReducer";
 const rootReducer = combineReducers({
   pizza: pizzaReducer,
 });

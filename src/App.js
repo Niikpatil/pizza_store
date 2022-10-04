@@ -1,14 +1,15 @@
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import PizzaPage from "./components/PizzaPage/PizzaPage";
-import store from "./components/Redux/store";
-// import "./App.css";
-store
 
 function App() {
   return (
-
-<div className="App">
-      <PizzaPage />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <PizzaPage />
+      </div>
+    </Provider>
   );
 }
 
