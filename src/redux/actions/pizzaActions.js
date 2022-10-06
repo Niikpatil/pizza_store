@@ -1,7 +1,15 @@
-import { Add_Pizza } from "../constants/pizzaTypes";
+import { INCREMENT, DECREMENT } from "../constants/pizzaTypes";
 
-export const addPizza = () => {
+const addPizza = () => {
   return {
-    type: Add_Pizza,
+    type: INCREMENT,
   };
 };
+
+const eatPizza = () => {
+  return {
+    type: DECREMENT,
+  };
+};
+
+export { addPizza, eatPizza };

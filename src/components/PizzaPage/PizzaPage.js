@@ -1,19 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPizza } from "../../redux/actions/pizzaActions";
+import { addPizza, eatPizza } from "../../redux/actions/pizzaActions";
 
-const PizzaPage = ({ numOfPizza, addPizza }) => {
+const PizzaPage = ({ pizzaList, numOfPizza }) => {
+  const pizza = pizzaList.map((p) => (
+    <ul>
+      <li> {p.title} </li>
+    </ul>
+  ));
+
   return (
     <div>
       <h3>PizzaPage</h3>
-      <h4>Pizza count: {numOfPizza}</h4>
-      <button onClick={addPizza}>Buy Pizza</button>
+      <div>
+        <h3>{pizza}</h3>
+        <button onClick={eatPizza}>-</button>
+        <h4>Pizza count: {numOfPizza}</h4>
+        <button onClick={addPizza}>+</button>
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
+    pizzaList: state.pizza.pizzaList,
     numOfPizza: state.pizza.numOfPizza,
   };
 };
@@ -21,6 +32,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addPizza: () => dispatch(addPizza()),
+    eatPizza: () => dispatch(eatPizza()),
   };
 };
 

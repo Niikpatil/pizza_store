@@ -1,10 +1,20 @@
-import { Add_Pizza } from "../constants/pizzaTypes";
+import { INCREMENT, DECREMENT } from "../constants/pizzaTypes";
+import dataPizza from "../../api/dataPizza";
 
-const initialState = { numOfPizza: 10 };
+const initialState = {
+  pizzaList: dataPizza,
+  numOfPizza: 10,
+};
 
-const pizzaReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case Add_Pizza:
+const pizzaReducer = (state = initialState, { type }) => {
+  switch (type) {
+    case INCREMENT:
+      return {
+        ...state,
+        numOfPizza: state.numOfPizza + 1,
+      };
+
+    case DECREMENT:
       return {
         ...state,
         numOfPizza: state.numOfPizza - 1,
