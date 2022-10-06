@@ -1,24 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPizza, eatPizza } from "../../redux/actions/pizzaActions";
+// import { addPizza, eatPizza } from "../../redux/actions/pizzaActions";
+import Header from "../Layouts/Header";
+import PizzaItemPage from "../PizzaItemPage/PizzaItemPage";
 
-const PizzaPage = ({ pizzaList, numOfPizza }) => {
-  const pizza = pizzaList.map((p) => (
-    <ul>
-      <li> {p.title} </li>
-    </ul>
-  ));
-
+const PizzaPage = ({ pizzaList }) => {
   return (
-    <div>
-      <h3>PizzaPage</h3>
-      <div>
-        <h3>{pizza}</h3>
-        <button onClick={eatPizza}>-</button>
-        <h4>Pizza count: {numOfPizza}</h4>
-        <button onClick={addPizza}>+</button>
-      </div>
-    </div>
+    <>
+      <Header />
+
+      <h3>PizzaPage: </h3>
+      {pizzaList.map((pizzaDetail) => (
+        <PizzaItemPage pizzaDetail={pizzaDetail} key={pizzaDetail.id} />
+      ))}
+    </>
   );
 };
 
@@ -29,11 +24,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPizza: () => dispatch(addPizza()),
-    eatPizza: () => dispatch(eatPizza()),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addPizza: () => dispatch(addPizza()),
+//     eatPizza: () => dispatch(eatPizza()),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PizzaPage);
+export default connect(mapStateToProps)(PizzaPage);

@@ -3,15 +3,21 @@ import dataPizza from "../../api/dataPizza";
 
 const initialState = {
   pizzaList: dataPizza,
+  cart: [],
   numOfPizza: 10,
 };
 
-const pizzaReducer = (state = initialState, { type }) => {
-  switch (type) {
+const pizzaReducer = (state = initialState, action) => {
+  switch (action.type) {
     case INCREMENT:
+      const item = state.pizzaList.find(
+        (plist) => plist.id === action.payload.id
+      );
+
       return {
         ...state,
-        numOfPizza: state.numOfPizza + 1,
+        cart: [...state.cart, item],
+        // cart: [...state.cart, {action.payload}],
       };
 
     case DECREMENT:

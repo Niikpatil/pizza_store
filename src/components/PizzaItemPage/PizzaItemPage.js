@@ -1,21 +1,33 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { addPizza, eatPizza } from "../../redux/actions/pizzaActions";
 
-const PizzaItemPage = () => {
-  const numOfPizza = useSelector((state) => state.pizza.numOfPizza);
+const PizzaItemPage = ({ pizzaDetail }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h3>PizzaPage</h3>
+    <>
+      <p>{pizzaDetail.title}</p>
+      <p>{pizzaDetail.price}</p>
       <div>
-        <button onClick={() => dispatch(eatPizza())}>-</button>
-        <h4>Pizza count: {numOfPizza}</h4>
-        <button onClick={() => dispatch(addPizza())}>+</button>
+        <button onClick={() => dispatch(eatPizza(pizzaDetail.id))}>-</button>{" "}
+        <button onClick={() => dispatch(addPizza(pizzaDetail.id))}>+</button>
       </div>
-    </div>
+    </>
   );
 };
 
-export default PizzaItemPage;
+// const mapStateToProps = (state) => {
+//   return {
+//     // pizzaList: state.pizza.pizzaList,
+//   };
+// };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPizza: (id) => dispatch(addPizza(id)),
+    eatPizza: () => dispatch(eatPizza()),
+  };
+};
+
+export default connect(mapDispatchToProps)(PizzaItemPage);

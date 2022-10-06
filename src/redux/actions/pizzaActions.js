@@ -1,14 +1,20 @@
 import { INCREMENT, DECREMENT } from "../constants/pizzaTypes";
 
-const addPizza = () => {
+const addPizza = (itemId) => {
   return {
     type: INCREMENT,
+    payload: {
+      id: itemId,
+    },
   };
 };
 
-const eatPizza = () => {
+const eatPizza = (itemId) => {
   return {
     type: DECREMENT,
+    payload: {
+      id: itemId,
+    },
   };
 };
 
