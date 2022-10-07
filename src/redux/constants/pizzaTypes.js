@@ -1,4 +1,3 @@
-export const ADD_PIZZA = "ADD_PIZZA";
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
-export const QUANTITY_PIZZA = "QUANTITY_PIZZA";
+export const ADD_CART_PIZZA = "ADD_CART_PIZZA";
+export const REMOVE_CART_PIZZA = "REMOVE_CART_PIZZA";
+export const QUANTITY_CART_PIZZA = "QUANTITY_CART_PIZZA";

@@ -1,21 +1,19 @@
-import { INCREMENT, DECREMENT } from "../constants/pizzaTypes";
+import { ADD_CART_PIZZA, REMOVE_CART_PIZZA } from "../constants/pizzaTypes";
 
-const addPizza = (itemId) => {
+export const addToCart = (itemId) => {
   return {
-    type: INCREMENT,
+    type: ADD_CART_PIZZA,
     payload: {
       id: itemId,
     },
   };
 };
 
-const eatPizza = (itemId) => {
+export const removeFromCart = (itemId) => {
   return {
-    type: DECREMENT,
+    type: REMOVE_CART_PIZZA,
     payload: {
       id: itemId,
     },
   };
 };
-
-export { addPizza, eatPizza };
