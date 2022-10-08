@@ -12,7 +12,7 @@ const CartPage = ({ cart }) => {
 
     cart.forEach((e) => {
       item += e.qty;
-      item += e.qty * e.price;
+      price += e.qty * e.price;
     });
 
     setCartItem(item);
@@ -21,12 +21,24 @@ const CartPage = ({ cart }) => {
 
   return (
     <div>
-      <h3>CartPage</h3>
-      react cart
-      {cart.map((selctedPizza) => (
-        <CartItemPage selctedPizza={selctedPizza} keys={selctedPizza.id} />
-      ))}
-      
+      <div>
+        {cart.length === 0 ? (
+          <h3>Oops ! Cart is Empty</h3>
+        ) : (
+          cart.map((selctedPizza) => (
+            <CartItemPage selctedPizza={selctedPizza} keys={selctedPizza.id} />
+          ))
+        )}
+      </div>
+      <aside>
+        <table>
+          <tr>
+            <th>No of Products</th>
+            <td>{cartItem}</td>
+            <td> - {totalAmount}</td>
+          </tr>
+        </table>
+      </aside>
     </div>
   );
 };

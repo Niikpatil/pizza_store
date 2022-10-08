@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../redux/actions/pizzaActions";
 
 const PizzaItemPage = ({ pizzaDetail, addToCart, removeFromCart }) => {
@@ -9,8 +10,10 @@ const PizzaItemPage = ({ pizzaDetail, addToCart, removeFromCart }) => {
       <div>
         <p>{pizzaDetail.title}</p>
         <p>{pizzaDetail.price}</p>
-        <button onClick={() => addToCart(pizzaDetail.id)}>add</button>
-        <button onClick={() => removeFromCart(pizzaDetail.id)}>Remove</button>
+        <button onClick={() => addToCart(pizzaDetail.id)}>Add Cart</button>
+        <button>
+          <Link to="cart">View Cart</Link>
+        </button>
       </div>
       <hr />
     </>
