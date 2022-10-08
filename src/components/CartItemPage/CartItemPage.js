@@ -1,12 +1,24 @@
 import React from "react";
+import { connect } from "react-redux";
+import { removeFromCart } from "../../redux/actions/pizzaActions";
 
-const CartItemPage = () => {
+const CartItemPage = ({ selctedPizza, removeFromCart }) => {
   return (
-    <div>
+    <>
       <h3>CartItemPage</h3>
-      react cart
-    </div>
+      <p>{selctedPizza.title}</p>
+      <p>{selctedPizza.description}</p>
+      <p>{selctedPizza.price}</p>
+      <button onClick={() => removeFromCart(selctedPizza.id)}>Remove</button>
+      <hr />
+    </>
   );
 };
 
-export default CartItemPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeFromCart: (id) => dispatch(removeFromCart(id)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CartItemPage);
