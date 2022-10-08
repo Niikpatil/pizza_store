@@ -12,6 +12,8 @@ const CartItemPage = ({ selctedPizza, removeFromCart, quantityCart }) => {
 
   return (
     <>
+      <img src={selctedPizza.imageURL} alt="food" width="80" height="80" />
+
       <p>{selctedPizza.title}</p>
       <p>{selctedPizza.description}</p>
       <p>{selctedPizza.price}</p>

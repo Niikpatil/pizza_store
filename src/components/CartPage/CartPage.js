@@ -30,15 +30,13 @@ const CartPage = ({ cart }) => {
           ))
         )}
       </div>
-      <aside>
-        <table>
-          <tr>
-            <th>No of Products</th>
-            <td>{cartItem}</td>
-            <td> - {totalAmount}</td>
-          </tr>
-        </table>
-      </aside>
+      <table>
+        <tr>
+          <th>No of Products</th>
+          <td>{cartItem}</td>
+          <td> - {totalAmount}</td>
+        </tr>
+      </table>
     </div>
   );
 };
