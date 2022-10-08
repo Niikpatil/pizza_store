@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Header = ({ cart }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -15,10 +16,14 @@ const Header = ({ cart }) => {
   return (
     <header className="Header_wrapper">
       <div>
-        <h3>Pizza</h3>
+        <Link to="">
+          <h3>Pizza</h3>
+        </Link>
       </div>
       <div>
-        <h3>Cart : {cartCount} </h3>
+        <Link to="cart">
+          <h3>Cart : {cartCount} </h3>
+        </Link>
       </div>
     </header>
   );

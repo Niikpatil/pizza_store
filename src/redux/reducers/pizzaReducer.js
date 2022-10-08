@@ -33,7 +33,10 @@ const pizzaReducer = (state = initialState, action) => {
       };
 
     case REMOVE_CART_PIZZA:
-      return {};
+      return {
+        ...state,
+        cart: state.cart.filter((x) => x.id !== action.payload.id),
+      };
 
     case QUANTITY_CART_PIZZA:
       return {

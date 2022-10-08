@@ -1,15 +1,14 @@
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import PizzaPage from "./components/PizzaPage/PizzaPage";
+import { BrowserRouter } from "react-router-dom";
+import HomePage from "./components/Layouts/HomePage";
 // import "./App.css";
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <PizzaPage />
-      </div>
-    </Provider>
+    <div className="App">
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    </div>
   );
 }
 
