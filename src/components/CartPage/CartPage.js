@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CartItemPage from "../CartItemPage/CartItemPage";
+// import "./cartPage.css";
 
 const CartPage = ({ cart }) => {
   const [cartItem, setCartItem] = useState(0);
@@ -20,24 +21,66 @@ const CartPage = ({ cart }) => {
   }, [cart, cartItem, setCartItem, totalAmount, setTotalAmount]);
 
   return (
-    <div>
-      <div>
-        {cart.length === 0 ? (
-          <h3>Oops ! Cart is Empty</h3>
-        ) : (
-          cart.map((selctedPizza) => (
-            <CartItemPage selctedPizza={selctedPizza} keys={selctedPizza.id} />
-          ))
-        )}
+    <>
+      <div class="container text-center"></div>
+      <div class=" cart_container">
+        <div class="cart_item">
+          {cart.length === 0 ? (
+            <h3>Oops ! Cart is Empty</h3>
+          ) : (
+            cart.map((selctedPizza) => (
+              <CartItemPage
+                selctedPizza={selctedPizza}
+                keys={selctedPizza.id}
+              />
+            ))
+          )}
+        </div>
+        <div class=" cart_item">
+          <div class="table-responsive-sm">
+            <table class="table shadow-sm">
+              <thead class="table-light">
+                <tr>
+                  <th colspan="2">Recipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Product Items
+                    <p>
+                      <small class="text-muted">asd</small>
+                    </p>
+                  </td>
+                  <td>{cartItem}</td>
+                </tr>
+                <tr>
+                  <td>
+                    Discount
+                    <p>
+                      <small class="text-muted">Mega offer</small>
+                    </p>
+                  </td>
+                  <td>₹ - 65</td>
+                </tr>
+                <tr>
+                  <td>MRP</td>
+                  <td>₹ {totalAmount}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Total Price</b>
+                  </td>
+                  <td>
+                    <b class="text-danger">₹ {totalAmount - 65}</b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <table>
-        <tr>
-          <th>No of Products</th>
-          <td>{cartItem}</td>
-          <td> - {totalAmount}</td>
-        </tr>
-      </table>
-    </div>
+    </>
   );
 };
 
