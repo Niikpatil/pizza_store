@@ -22,9 +22,8 @@ const CartPage = ({ cart }) => {
 
   return (
     <>
-      <div class="container text-center"></div>
-      <div class=" cart_container">
-        <div class="cart_item">
+      <div className="cart_container">
+        <div className="cart_item">
           {cart.length === 0 ? (
             <h3>Oops ! Cart is Empty</h3>
           ) : (
@@ -36,10 +35,10 @@ const CartPage = ({ cart }) => {
             ))
           )}
         </div>
-        <div class=" cart_item">
-          <div class="table-responsive-sm">
-            <table class="table shadow-sm">
-              <thead class="table-light">
+        <div className="cart_item">
+          <div className="table-responsive-sm">
+            <table className="table shadow-sm">
+              <thead className="table-light">
                 <tr>
                   <th colspan="2">Recipt</th>
                 </tr>
@@ -49,7 +48,7 @@ const CartPage = ({ cart }) => {
                   <td>
                     Product Items
                     <p>
-                      <small class="text-muted">asd</small>
+                      <small className="text-muted">asd</small>
                     </p>
                   </td>
                   <td>{cartItem}</td>
@@ -58,7 +57,7 @@ const CartPage = ({ cart }) => {
                   <td>
                     Discount
                     <p>
-                      <small class="text-muted">Mega offer</small>
+                      <small className="text-muted">Mega offer</small>
                     </p>
                   </td>
                   <td>₹ - 65</td>
@@ -72,7 +71,7 @@ const CartPage = ({ cart }) => {
                     <b>Total Price</b>
                   </td>
                   <td>
-                    <b class="text-danger">₹ {totalAmount - 65}</b>
+                    <b className="text-danger">₹ {totalAmount - 65}</b>
                   </td>
                 </tr>
               </tbody>

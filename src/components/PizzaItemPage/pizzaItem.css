@@ -1,0 +1,23 @@
+.pizza_list_container {
+  /* padding: 40px 0; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 40px;
+}
+
+.pizza_card_container {
+  margin: 0 auto;
+  width: 200px;
+  height: 250px;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  border: solid saddlebrown 2px;
+}
+
+.pizza_card_container img {
+  width: min-content;
+  min-height: auto;
+}

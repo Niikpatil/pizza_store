@@ -1,19 +1,63 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: darkslategrey;
   margin: 0;
 }
 
+/* ___________ Header CSS ___________ */
 .Header_wrapper {
-  color: white;
-  background-color: #666;
-  text-align: center;
+  height: 60px;
+  padding: 0 30px;
   font-size: 15px;
-  padding: 0 3%;
+  background-color: #ffffffef;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
+/* ___________ Cart item CSS  ___________ */
+
+.cart_container {
+  max-height: 60%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cart_item {
+  width: 500px;
+  margin: 2%;
+}
+
+.cart_item_cantainer {
+  border-radius: 5px;
+  margin-bottom: 4%;
+  font-size: 15px;
+  height: 120px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.cart_item_cantainer:hover {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.cart_item_cantainer img {
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.cart_item_cantainer input {
+  width: 50px;
+}

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { removeFromCart, quantityCart } from "../../redux/actions/pizzaActions";
 
 // import "./cartItemPage.css";
+import { BsTrash } from "react-icons/bs";
 
 const CartItemPage = ({ selctedPizza, removeFromCart, quantityCart }) => {
   const [itemQt, setItemQt] = useState(selctedPizza.qty);
@@ -13,15 +14,16 @@ const CartItemPage = ({ selctedPizza, removeFromCart, quantityCart }) => {
   };
 
   return (
-    <div class="cart_item_cantainer shadow">
+    <div className="cart_item_cantainer ">
       <span>
         <img src={selctedPizza.imageURL} alt="food" width="80" height="80" />
       </span>
-      <span>
+
+      <small>
         <p>{selctedPizza.title}</p>
         <p>{selctedPizza.description}</p>
-        <p>{selctedPizza.price}</p>
-      </span>
+        <p className="text-danger">₹ {selctedPizza.price}</p>
+      </small>
       <span className="input">
         <p>Quantity</p>
         <p>
@@ -38,7 +40,9 @@ const CartItemPage = ({ selctedPizza, removeFromCart, quantityCart }) => {
         </p>
       </span>
       <span>
-        <button onClick={() => removeFromCart(selctedPizza.id)}>Remove</button>
+        <h4>
+          <BsTrash onClick={() => removeFromCart(selctedPizza.id)} />
+        </h4>
       </span>
     </div>
   );
