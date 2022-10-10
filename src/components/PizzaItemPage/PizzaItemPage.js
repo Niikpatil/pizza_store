@@ -12,11 +12,22 @@ const PizzaItemPage = ({ pizzaDetail, addToCart }) => {
         <img src={pizzaDetail.imageURL} alt="food" width="110" height="110" />
         <div>
           <p>{pizzaDetail.title}</p>
-          <p>{pizzaDetail.price}</p>
-          <button onClick={() => addToCart(pizzaDetail.id)}>Add Cart</button>
-          <button>
-            <Link to="cart">View Cart</Link>
-          </button>
+          <h5>{pizzaDetail.price}</h5>
+          <span>
+            <button
+              type="button"
+              class="btn btn-sm btn-success"
+              onClick={() => addToCart(pizzaDetail.id)}
+            >
+              Add Cart
+            </button>
+
+            <Link to="cart">
+              <button type="button" class="btn btn-sm btn-danger">
+                View Cart
+              </button>
+            </Link>
+          </span>
         </div>
       </div>
     </>

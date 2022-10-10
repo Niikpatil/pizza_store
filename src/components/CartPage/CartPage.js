@@ -36,47 +36,58 @@ const CartPage = ({ cart }) => {
           )}
         </div>
         <div className="cart_item">
-          <div className="table-responsive-sm">
-            <table className="table shadow-sm">
-              <thead className="table-light">
-                <tr>
-                  <th colspan="2">Recipt</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Product Items
-                    <p>
-                      <small className="text-muted">asd</small>
-                    </p>
-                  </td>
-                  <td>{cartItem}</td>
-                </tr>
-                <tr>
-                  <td>
-                    Discount
-                    <p>
-                      <small className="text-muted">Mega offer</small>
-                    </p>
-                  </td>
-                  <td>₹ - 65</td>
-                </tr>
-                <tr>
-                  <td>MRP</td>
-                  <td>₹ {totalAmount}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Total Price</b>
-                  </td>
-                  <td>
-                    <b className="text-danger">₹ {totalAmount - 65}</b>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table className="table">
+            <thead className="table-light">
+              <tr>
+                <th colspan="2">Payment Invoice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Product Items
+                  <p>
+                    <small className="text-muted">(number of Pizzas)</small>
+                  </p>
+                </td>
+                <td>{cartItem}</td>
+              </tr>
+              <tr>
+                <td>MRP</td>
+                <td>₹ {totalAmount}</td>
+              </tr>
+              <tr>
+                <td>
+                  Discount
+                  <p>
+                    <small className="text-muted">Mega offer</small>
+                  </p>
+                </td>
+                <td className="text-danger">
+                  ₹{(totalAmount * 10) / 100} off
+                  <p>
+                    <small className="text-muted">10% </small>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Total Price</b>
+                </td>
+                <td>
+                  {/* <b className="text-danger">₹ {totalAmount - 65}</b> */}
+
+                  <b className=" text-success">
+                    <h5>
+                      {totalAmount <= 0
+                        ? "₹ 0"
+                        : `₹ ${totalAmount - (totalAmount * 10) / 100}`}
+                    </h5>
+                  </b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </>

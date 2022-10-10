@@ -21,7 +21,7 @@ const CartItemPage = ({ selctedPizza, removeFromCart, quantityCart }) => {
 
       <small>
         <p>{selctedPizza.title}</p>
-        <p>{selctedPizza.description}</p>
+        <p className="text-muted">{selctedPizza.description}</p>
         <p className="text-danger">₹ {selctedPizza.price}</p>
       </small>
       <span className="input">
