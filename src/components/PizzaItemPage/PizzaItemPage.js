@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/actions/pizzaActions";
 
-import "./pizzaItem.css";
+// import "./pizzaItem.css";
 
 const PizzaItemPage = ({ pizzaDetail, addToCart }) => {
   return (
@@ -16,14 +16,14 @@ const PizzaItemPage = ({ pizzaDetail, addToCart }) => {
           <span>
             <button
               type="button"
-              class="btn btn-sm btn-success"
+              className="btn btn-sm btn-success"
               onClick={() => addToCart(pizzaDetail.id)}
             >
               Add Cart
             </button>
 
             <Link to="cart">
-              <button type="button" class="btn btn-sm btn-danger">
+              <button type="button" className="btn btn-sm btn-danger">
                 View Cart
               </button>
             </Link>
