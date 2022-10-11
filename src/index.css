@@ -9,8 +9,9 @@ body {
   height: 60px;
   padding: 0 30px;
   font-size: 16px;
-  background-color: #f8f5f5f0;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: #ffffff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 
   display: flex;
   justify-content: space-between;
@@ -75,11 +76,12 @@ table {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   row-gap: 40px;
-  background-color: #eae8e8e2;
+  background-color: #dbe1f4;
+  /* background-color: #ffebf3c3; */
 }
 
 .pizza_card_container {
-  background-color: #fffefeb9;
+  background-color: #f5f5f5;
   margin: 0 auto;
   width: 250px;
   height: 300px;
